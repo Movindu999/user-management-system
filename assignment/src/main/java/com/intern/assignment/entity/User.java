@@ -2,6 +2,7 @@ package com.intern.assignment.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDate;
 
 @Entity
@@ -22,6 +23,8 @@ public class User {
 
     @NotNull(message = "Birthday cannot be empty")
     @Column(nullable = false)
+    @PastOrPresent(message = "Birthday must be a date in the past or today")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthday;
 
     @NotBlank(message = "Mobile number cannot be empty")

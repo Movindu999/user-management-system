@@ -66,12 +66,11 @@
                                 <label class="form-label fw-bold">Birthday</label>
                                 <input type="date"
                                        class="form-control"
-                                       th:field="*{birthday}">
-
-                                <div class="text-danger small"
-                                     th:if="${#fields.hasErrors('birthday')}"
-                                     th:errors="*{birthday}">
-                                </div>
+                                       th:field="*{birthday}"
+                                       th:max="${#temporals.format(#temporals.createNow(), 'yyyy-MM-dd')}"> <div class="text-danger small"
+                                                                                                                 th:if="${#fields.hasErrors('birthday')}"
+                                                                                                                 th:errors="*{birthday}">
+                            </div>
                             </div>
 
                             <div class="col-md-6">
