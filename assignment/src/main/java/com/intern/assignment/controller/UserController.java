@@ -58,7 +58,7 @@ public class UserController {
         return "redirect:/list";
     }
 
-    // FIXED: Added required parameters for search and pagination to fix the error
+    // Added required parameters for search and pagination
     @GetMapping("/list")
     public String listUsers(Model model,
                             @RequestParam(value = "keyword", required = false) String keyword,
