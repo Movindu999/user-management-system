@@ -31,4 +31,14 @@ public class UserService {
     public User getUserById(Integer id) {
         return userRepository.findById(id).orElse(null);
     }
+
+    // Check if email already exists
+    public boolean existsByEmail(String email) {
+        return userRepository.existsByEmail(email);
+    }
+
+    // Check if Mobile number already exists
+    public boolean existsByMobile(String mobile) {
+        return userRepository.existsByMobile(mobile);
+    }
 }

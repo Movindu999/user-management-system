@@ -32,9 +32,21 @@ public class UserController {
     // STEP 1: Form submission goes to Preview Page
     @PostMapping("/preview")
     public String previewUser(@Valid @ModelAttribute("user") User user, BindingResult result, Model model) {
+
+        // Duplicate email validation logic
+        if (user.getId() == null && userService.existsByEmail(user.getEmail())) {
+            result.rejectValue("email", "error.user", "This email is already registered.");
+        }
+
+        // Duplicate Mobile check
+        if (user.getId() == null && userService.existsByMobile(user.getMobile())) {
+            result.rejectValue("mobile", "error.user", "This mobile number is already registered.");
+        }
+
         if (result.hasErrors()) {
             return "register";
         }
+
         model.addAttribute("user", user);
         return "preview";
     }

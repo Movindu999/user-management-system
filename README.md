@@ -5,6 +5,7 @@ This project is a Java-based web application developed to demonstrate the abilit
 
 ### 📋 Main Functionalities:
 - **Submit Information:** Capture user details via a validated web form.
+- **Preview Before Submit:** Before final registration, users can review entered form data in a preview screen to ensure accuracy before saving to the database.
 - **Data Persistence:** Store and manage data permanently in a MySQL database.
 - **Dashboard View:** A centralized view to see all saved records.
 - **Edit & Update:** Full functionality to modify existing user information.
@@ -39,7 +40,12 @@ assignment/
 │   │       │   ├── preview.html       
 │   │       │   └── list.html          
 │   │       └── application.properties 
-└── database.sql                       
+│
+├── database.sql                       
+│
+├── screenshots/                       
+│   
+└── README.md               
 ```
 
 ---
@@ -94,10 +100,28 @@ spring.datasource.password=YOUR_MYSQL_PASSWORD
 ## ✨ Features & Requirements
 
 - **Form Page:** A clean, user-friendly interface to capture: Full Name, About Section, Birthday, Mobile Number, Email Address, and Country.
-- **Validation:** Robust server-side and client-side validation to ensure all required fields are filled and formats (like Email and Mobile) are correct.
+- **Validation:** Robust server-side and client-side validation to ensure all required fields are filled and formats (like Email and Mobile) are correct.No duplicate **Email** or **Mobile Number** registration allowed.
+  Birthday must be a date in the past or today (Future dates are disabled).
 - **Advanced Search:** Integrated Search/Filter functionality on the list page to manage user records.
 - **Responsive Design:** Optimized for all screen sizes using modern UI practices and Bootstrap.
 
 ---
+
+## Screenshots
+
+### Home Page
+![Home](screenshots/HomePage.png)
+
+### Registration Form
+![Register](screenshots/RegistrationPage.png)
+
+### User List
+![List](screenshots/ListPage.png)
+
+### Preview Form
+![List](screenshots/PreviewPage.png)
+
+### Update Form
+![List](screenshots/UpdateUserPage.png)
 
 *Developed for the Software Engineer Internship Assessment - 2026*

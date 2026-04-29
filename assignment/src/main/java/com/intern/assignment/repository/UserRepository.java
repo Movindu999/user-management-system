@@ -9,6 +9,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
+    //Check if an email already exists in the database
+    boolean existsByEmail(String email);
+
+    // Check if a mobile number already exists in the database
+    boolean existsByMobile(String mobile);
+
     // Search by Name, Email, or Mobile (Case Insensitive) with Pagination support
     Page<User> findByNameContainingIgnoreCaseOrEmailContainingIgnoreCaseOrMobileContainingIgnoreCase(
             String name, String email, String mobile, Pageable pageable);
